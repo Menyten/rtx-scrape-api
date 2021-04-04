@@ -5,17 +5,21 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 let clients = [];
+let scrapedData = scrape();
+let interval = null;
 
 app.get('/product-status', async (req, res) => {
   const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers':
+      'Origin, X-Requested-With, Content-Type, Accept',
     'Content-Type': 'text/event-stream',
     Connection: 'keep-alive',
     'Cache-Control': 'no-cache',
   };
   res.writeHead(200, headers);
 
-  const scrapedData = await scrape();
-  const data = `data: ${JSON.stringify(scrapedData)}\n\n`;
+  const data = `data: ${JSON.stringify(await scrapedData)}\n\n`;
   res.write(data);
 
   const clientId = Date.now();
@@ -30,12 +34,14 @@ app.get('/product-status', async (req, res) => {
     clients = clients.filter((client) => client.id !== clientId);
   });
 
-  setInterval(async () => {
-    const scrapedAgain = await scrape();
-    clients.forEach((client) => {
-      client.res.write(`data: ${JSON.stringify(scrapedAgain)}\n\n`);
-    });
-  }, 60 * 1000);
+  if (!interval) {
+    interval = setInterval(async () => {
+      scrapedData = await scrape();
+      clients.forEach((client) => {
+        client.res.write(`data: ${JSON.stringify(scrapedData)}\n\n`);
+      });
+    }, 60 * 1000);
+  }
 });
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

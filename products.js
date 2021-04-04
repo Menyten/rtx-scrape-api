@@ -18,7 +18,7 @@ const getWebbhallenData = async (page) => {
     const productName = document.querySelector('h1').innerText;
     const productImage = document
       .querySelector('.gallery .ximg-content')
-      .style.backgroundImage.replace('url("//', '')
+      .style.backgroundImage.replace('url("//', 'https://')
       .replace('")', '');
     const productButton = document.querySelector('#add-product-to-cart button')
       .innerText;
