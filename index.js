@@ -32,6 +32,8 @@ app.get('/product-status', async (req, res) => {
   req.on('close', () => {
     console.log(`${clientId} Connection closed`);
     clients = clients.filter((client) => client.id !== clientId);
+    !clients.length && clearInterval(interval);
+    !clients.length && (interval = null);
   });
 
   if (!interval) {
@@ -40,7 +42,7 @@ app.get('/product-status', async (req, res) => {
       clients.forEach((client) => {
         client.res.write(`data: ${JSON.stringify(scrapedData)}\n\n`);
       });
-    }, 60 * 1000);
+    }, 60 * 10 * 1000);
   }
 });
 
