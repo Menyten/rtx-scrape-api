@@ -1,13 +1,13 @@
 module.exports = {
-  komplett: [
-    'https://www.komplett.se/product/1168436/datorutrustning/datorkomponenter/grafikkort/asus-geforce-rtx-3080-rog-strix-oc',
-    'https://www.komplett.se/product/1168439/datorutrustning/datorkomponenter/grafikkort/asus-geforce-rtx-3080-rog-strix',
-    'https://www.komplett.se/product/1168358/datorutrustning/datorkomponenter/grafikkort/asus-geforce-rtx-3080-tuf-gaming',
-    'https://www.komplett.se/product/1176247/datorutrustning/datorkomponenter/grafikkort/asus-geforce-rtx-3080-rog-strix-oc-white',
-    'https://www.komplett.se/product/1175704/datorutrustning/datorkomponenter/grafikkort/gigabyte-geforce-rtx-3080-aorus-xtreme-wf',
-    'https://www.komplett.se/product/1168418/datorutrustning/datorkomponenter/grafikkort/gigabyte-geforce-rtx-3080-aorus-master',
-    'https://www.komplett.se/product/1168380/datorutrustning/datorkomponenter/grafikkort/msi-geforce-rtx-3080-gaming-x-trio',
-  ],
+  // komplett: [
+  //   'https://www.komplett.se/product/1168436/datorutrustning/datorkomponenter/grafikkort/asus-geforce-rtx-3080-rog-strix-oc',
+  //   'https://www.komplett.se/product/1168439/datorutrustning/datorkomponenter/grafikkort/asus-geforce-rtx-3080-rog-strix',
+  //   'https://www.komplett.se/product/1168358/datorutrustning/datorkomponenter/grafikkort/asus-geforce-rtx-3080-tuf-gaming',
+  //   'https://www.komplett.se/product/1176247/datorutrustning/datorkomponenter/grafikkort/asus-geforce-rtx-3080-rog-strix-oc-white',
+  //   'https://www.komplett.se/product/1175704/datorutrustning/datorkomponenter/grafikkort/gigabyte-geforce-rtx-3080-aorus-xtreme-wf',
+  //   'https://www.komplett.se/product/1168418/datorutrustning/datorkomponenter/grafikkort/gigabyte-geforce-rtx-3080-aorus-master',
+  //   'https://www.komplett.se/product/1168380/datorutrustning/datorkomponenter/grafikkort/msi-geforce-rtx-3080-gaming-x-trio',
+  // ],
   webbhallen: [
     'https://www.webhallen.com/se/product/324099-ASUS-ROG-STRIX-GeForce-RTX-3080-10GB-Gaming-OC',
     'https://www.webhallen.com/se/product/327539-MSI-GeForce-RTX-3080-SUPRIM-X-10GB',
